@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "Albert Sans";
+  src: url("fonts/AlbertSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Albert Sans";
+  src: url("fonts/AlbertSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  --bg: #f7f2e8;
+  --surface: #fffdf8;
+  --text: #0e3b43;
+  --muted: #4d6a6f;
+  --line: #e4dac8;
+  --badge-bg: #e9e1d0;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b2e34;
+    --surface: #10393f;
+    --text: #f4e6cc;
+    --muted: #a8bcb8;
+    --line: #1f4b52;
+    --badge-bg: #1a4a51;
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 "Albert Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-header {
+  padding: 28px 0 8px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 19px;
+  text-decoration: none;
+}
+
+.brand img {
+  border-radius: 8px;
+}
+
+.hero {
+  padding: 56px 0 40px;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 6vw, 44px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.lede {
+  margin: 0;
+  max-width: 34em;
+  color: var(--muted);
+  font-size: 19px;
+}
+
+.app {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.app img {
+  flex: none;
+  border-radius: 22%;
+}
+
+.app h2 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.app p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin: 0;
+}
+
+.badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.policy {
+  padding: 40px 0 24px;
+}
+
+.policy h1 {
+  font-size: clamp(28px, 5vw, 38px);
+}
+
+.policy .meta {
+  margin: 0 0 28px;
+  color: var(--muted);
+}
+
+.policy h2 {
+  margin: 36px 0 8px;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.policy p,
+.policy li {
+  max-width: 38em;
+}
+
+.policy ul {
+  padding-left: 22px;
+}
+
+.policy li + li {
+  margin-top: 6px;
+}
+
+.summary {
+  margin: 0 0 8px;
+  padding: 16px 20px;
+  border-left: 4px solid var(--text);
+  border-radius: 4px;
+  background: var(--surface);
+}
+
+.site-footer {
+  margin-top: 56px;
+  padding: 24px 0 40px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.site-footer p {
+  margin: 0 0 4px;
+}
+
+@media (max-width: 480px) {
+  .app {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
